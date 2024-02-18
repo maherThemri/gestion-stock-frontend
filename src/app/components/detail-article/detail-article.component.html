@@ -1,0 +1,91 @@
+<div class="row mb-1 costum-border mr-0">
+    <div class="col-md-1 border-right mt-1 mb-1">
+        <div class="mt-4 text-center">
+            <img [src]="articleDto.photo ? 'assets/uploads/'+articleDto.photo:'assets/product.jpg'" width="50px"
+                height="50px">
+        </div>
+    </div>
+    <!-- Details article -->
+    <div class="col-md-5 m-0 border-right mt-1 mb-1">
+        <div class="col">
+            <div class="row">
+                <div class="mr-2"><i class="fa-solid fa-circle-info icon-blue"></i></div>
+                <div>{{articleDto.codeArticle}}</div>
+            </div>
+            <div class="row">
+                <div class="mr-2"><i class="fa-solid fa-circle-info icon-blue"></i></div>
+                <div>{{articleDto.designation}}</div>
+            </div>
+            <div class="row">
+                <div class="mr-2"><i class="fa-solid fa-sack-dollar icon-blue"></i></div>
+                <div>{{articleDto.prixUnitaireHt}} DT</div>
+            </div>
+            <div class="row">
+                <div class="mr-2"><i class="fa-solid fa-sack-dollar icon-blue"></i></div>
+                <div>{{articleDto.prixUnitaireTtc}} DT</div>
+            </div>
+        </div>
+    </div>
+    <!-- Details categorie -->
+    <div class="col-md-3 border-right mt-1 mb-1">
+        <div class="row">
+            <div class="col-md-2 mt-3">
+                <i class="fa-solid fa-flag-checkered icon-blue"></i>
+            </div>
+            <div class="col-md-10">
+                <div class="row">
+                    <div class="col-md-12">{{articleDto.category?.code}}</div>
+                    <div class="col-md-12">{{articleDto.category?.designation}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bouttons d'action -->
+    <div class="col-md-3 mt-1 mb-1">
+        <div class="row">
+            <div class="col-md-4">
+                <button type="button" class="btn btn-link" title="Modifier" (click)="navigateToEditArticle()">
+                    <i class="fa-regular fa-pen-to-square"></i>
+                </button>
+            </div>
+            <div class="col-md-4">
+                <button type="button" class="btn btn-link text-danger" title="Supprimer" data-toggle="modal"
+                    [attr.data-target]="'#modalDeleteArticle'+ articleDto.id">
+                    <i class="fa-solid fa-trash-can"></i>
+                </button>
+            </div>
+            <div class="col-md-4">
+                <button type="button" class="btn btn-link" title="Details">
+                    <i class="fa-solid fa-list-check"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="modalDeleteArticle{{articleDto.id}}" data-backdrop="static" data-keyboard="false"
+        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Confirmation</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Etes vous-sur vouloir supprimer cet article?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                        <i class="fas fa-ban"></i>
+                        Annuler
+                    </button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"
+                        (click)="confirmerEtSupprimerArticle()">
+                        <i class="fa-solid fa-trash-can"></i> Supprimer
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

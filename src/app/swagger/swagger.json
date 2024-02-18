@@ -1,0 +1,2512 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "OpenAPI definition",
+    "version": "v0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8089",
+      "description": "Generated server url"
+    }
+  ],
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "paths": {
+    "/ventes/create": {
+      "post": {
+        "tags": ["ventes-controller"],
+        "operationId": "saveVente",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VentesDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/VentesDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/utilisateurs/update/password": {
+      "post": {
+        "tags": ["utilisateur-controller"],
+        "operationId": "changerMotDePasse",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangerMotDePasseUtilisateurDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/UtilisateurDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/utilisateurs/create": {
+      "post": {
+        "tags": ["utilisateur-controller"],
+        "operationId": "saveUtilisateur",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UtilisateurDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/UtilisateurDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/photos/save/{id}/{title}/{context}": {
+      "post": {
+        "tags": ["photo-controller"],
+        "operationId": "savePhoto",
+        "parameters": [
+          {
+            "name": "context",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "title",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": ["file"],
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/mvtStks/sortie": {
+      "post": {
+        "tags": ["mvt-stk-controller"],
+        "operationId": "sortieStock",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MvtStkDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/MvtStkDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/mvtStks/entree": {
+      "post": {
+        "tags": ["mvt-stk-controller"],
+        "operationId": "entreeStock",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MvtStkDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/MvtStkDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/mvtStks/correctionpos": {
+      "post": {
+        "tags": ["mvt-stk-controller"],
+        "operationId": "correctionStockPos",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MvtStkDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/MvtStkDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/mvtStks/correctionneg": {
+      "post": {
+        "tags": ["mvt-stk-controller"],
+        "operationId": "correctionStockNeg",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MvtStkDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/MvtStkDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/fournisseurs/create": {
+      "post": {
+        "tags": ["fournisseur-controller"],
+        "operationId": "saveFournisseur",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FournisseurDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/FournisseurDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/entreprises/create": {
+      "post": {
+        "tags": ["entreprise-controller"],
+        "operationId": "saveEntreprise",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EntrepriseDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntrepriseDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/commandesFournisseurs/create": {
+      "post": {
+        "tags": ["commande-fournisseur-controller"],
+        "operationId": "saveCommandeFournisseur",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CommandeFournisseurDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommandeFournisseurDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/commandesClients/create": {
+      "post": {
+        "tags": ["commande-client-controller"],
+        "operationId": "saveCommandeClient",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CommandeClientDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommandeClientDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/clients/create": {
+      "post": {
+        "tags": ["client-controller"],
+        "operationId": "saveClient",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClientDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClientDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/categories/create": {
+      "post": {
+        "tags": ["category-controller"],
+        "operationId": "saveCategory",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CategoryDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/CategoryDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth/register": {
+      "post": {
+        "tags": ["authentication-controller"],
+        "operationId": "register",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UtilisateurDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthenticationResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth/authenticate": {
+      "post": {
+        "tags": ["authentication-controller"],
+        "operationId": "authenticate",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuthenticationRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthenticationResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/articles/create": {
+      "post": {
+        "tags": ["article-controller"],
+        "operationId": "saveArticle",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ArticleDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ArticleDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/utilisateurs/validate/{idUtilisateur}": {
+      "patch": {
+        "tags": ["utilisateur-controller"],
+        "operationId": "validateAccount",
+        "parameters": [
+          {
+            "name": "idUtilisateur",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/utilisateurs/invalidate/{idUtilisateur}": {
+      "patch": {
+        "tags": ["utilisateur-controller"],
+        "operationId": "invalidateAccount",
+        "parameters": [
+          {
+            "name": "idUtilisateur",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/commandesFournisseurs/update/quantite/{idCommande}/{idLigneCommande}/{quantite}": {
+      "patch": {
+        "tags": ["commande-fournisseur-controller"],
+        "operationId": "updateQuantiteCommande",
+        "parameters": [
+          {
+            "name": "idCommande",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "idLigneCommande",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "quantite",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommandeFournisseurDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/commandesFournisseurs/update/fournisseur/{idCommande}/{idFournisseur}": {
+      "patch": {
+        "tags": ["commande-fournisseur-controller"],
+        "operationId": "updateFournisseur",
+        "parameters": [
+          {
+            "name": "idCommande",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "idFournisseur",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommandeFournisseurDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/commandesFournisseurs/update/etat/{idCommande}/{etatCommande}": {
+      "patch": {
+        "tags": ["commande-fournisseur-controller"],
+        "operationId": "updateEtatCommande",
+        "parameters": [
+          {
+            "name": "idCommande",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "etatCommande",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": ["EN_PREPARATION", "VALIDEE", "LIVREE"]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommandeFournisseurDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/commandesFournisseurs/update/article/{idCommande}/{idLigneCommande}/{idArticle}": {
+      "patch": {
+        "tags": ["commande-fournisseur-controller"],
+        "operationId": "updateArticle",
+        "parameters": [
+          {
+            "name": "idCommande",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "idLigneCommande",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "idArticle",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommandeFournisseurDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/commandesClients/update/quantite/{idCommande}/{idLigneCommande}/{quantite}": {
+      "patch": {
+        "tags": ["commande-client-controller"],
+        "operationId": "updateQuantiteCommande_1",
+        "parameters": [
+          {
+            "name": "idCommande",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "idLigneCommande",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "quantite",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommandeClientDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/commandesClients/update/etat/{idCommande}/{etatCommande}": {
+      "patch": {
+        "tags": ["commande-client-controller"],
+        "operationId": "updateEtatCommande_1",
+        "parameters": [
+          {
+            "name": "idCommande",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "etatCommande",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": ["EN_PREPARATION", "VALIDEE", "LIVREE"]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommandeClientDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/commandesClients/update/client/{idCommande}/{idClient}": {
+      "patch": {
+        "tags": ["commande-client-controller"],
+        "operationId": "updateClient",
+        "parameters": [
+          {
+            "name": "idCommande",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "idClient",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommandeClientDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/commandesClients/update/article/{idCommande}/{idLigneCommande}/{idArticle}": {
+      "patch": {
+        "tags": ["commande-client-controller"],
+        "operationId": "updateArticle_1",
+        "parameters": [
+          {
+            "name": "idCommande",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "idLigneCommande",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "idArticle",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommandeClientDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ventes/{idVente}": {
+      "get": {
+        "tags": ["ventes-controller"],
+        "operationId": "findVenteById",
+        "parameters": [
+          {
+            "name": "idVente",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/VentesDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ventes/{codeVente}": {
+      "get": {
+        "tags": ["ventes-controller"],
+        "operationId": "findVenteByCode",
+        "parameters": [
+          {
+            "name": "codeVente",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/VentesDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ventes/allVentes": {
+      "get": {
+        "tags": ["ventes-controller"],
+        "operationId": "findAllVentes",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/VentesDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/utilisateurs/{idUtilisateur}": {
+      "get": {
+        "tags": ["utilisateur-controller"],
+        "operationId": "findUtilisateurById",
+        "parameters": [
+          {
+            "name": "idUtilisateur",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/UtilisateurDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/utilisateurs/find/{email}": {
+      "get": {
+        "tags": ["utilisateur-controller"],
+        "operationId": "findByEmail",
+        "parameters": [
+          {
+            "name": "email",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/UtilisateurDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/utilisateurs/allUtilisateur": {
+      "get": {
+        "tags": ["utilisateur-controller"],
+        "operationId": "findAllUtilisateurs",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/UtilisateurDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/mvtStks/stockreel/{idArticle}": {
+      "get": {
+        "tags": ["mvt-stk-controller"],
+        "operationId": "stockReelArticle",
+        "parameters": [
+          {
+            "name": "idArticle",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/mvtStks/filter/article/{idArticle}": {
+      "get": {
+        "tags": ["mvt-stk-controller"],
+        "operationId": "mvtStkArticle",
+        "parameters": [
+          {
+            "name": "idArticle",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MvtStkDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/fournisseurs/{idFournisseur}": {
+      "get": {
+        "tags": ["fournisseur-controller"],
+        "operationId": "findFournisseurById",
+        "parameters": [
+          {
+            "name": "idFournisseur",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/FournisseurDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/fournisseurs/allFournisseurs": {
+      "get": {
+        "tags": ["fournisseur-controller"],
+        "operationId": "findAllFournisseurs",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/FournisseurDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/entreprises/{idEntreprise}": {
+      "get": {
+        "tags": ["entreprise-controller"],
+        "operationId": "findEntrepriseById",
+        "parameters": [
+          {
+            "name": "idEntreprise",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntrepriseDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/entreprises/allEntreprises": {
+      "get": {
+        "tags": ["entreprise-controller"],
+        "operationId": "findAllEntreprises",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EntrepriseDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/commandesFournisseurs/{idCommandeFournisseur}": {
+      "get": {
+        "tags": ["commande-fournisseur-controller"],
+        "operationId": "findById",
+        "parameters": [
+          {
+            "name": "idCommandeFournisseur",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommandeFournisseurDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/commandesFournisseurs/lignesCommande/{idCommande}": {
+      "get": {
+        "tags": ["commande-fournisseur-controller"],
+        "operationId": "findAllLignesCommandesFournisseurByCommandeFournisseurId",
+        "parameters": [
+          {
+            "name": "idCommande",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LigneCommandeFournisseurDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/commandesFournisseurs/filter/{codeCommandeFournisseur}": {
+      "get": {
+        "tags": ["commande-fournisseur-controller"],
+        "operationId": "findByCode",
+        "parameters": [
+          {
+            "name": "code",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommandeFournisseurDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/commandesFournisseurs/allCommandesFournisseurs": {
+      "get": {
+        "tags": ["commande-fournisseur-controller"],
+        "operationId": "findAll",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CommandeFournisseurDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/commandesClients/{idCommandeClient}": {
+      "get": {
+        "tags": ["commande-client-controller"],
+        "operationId": "findById_1",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommandeClientDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/commandesClients/lignesCommande/{idCommande}": {
+      "get": {
+        "tags": ["commande-client-controller"],
+        "operationId": "findAllLignesCommandesClientByCommandeClientId",
+        "parameters": [
+          {
+            "name": "idCommande",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LigneCommandeClientDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/commandesClients/filter/{codeCommandeClient}": {
+      "get": {
+        "tags": ["commande-client-controller"],
+        "operationId": "findByCode_1",
+        "parameters": [
+          {
+            "name": "code",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommandeClientDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/commandesClients/allCommandesClients": {
+      "get": {
+        "tags": ["commande-client-controller"],
+        "operationId": "findAllCommandesClients",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CommandeClientDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/clients/{idClient}": {
+      "get": {
+        "tags": ["client-controller"],
+        "operationId": "findById_2",
+        "parameters": [
+          {
+            "name": "idClient",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClientDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/clients/allClients": {
+      "get": {
+        "tags": ["client-controller"],
+        "operationId": "findAllClients",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ClientDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/categories/{idCategory}": {
+      "get": {
+        "tags": ["category-controller"],
+        "operationId": "findById_3",
+        "parameters": [
+          {
+            "name": "idCategory",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/CategoryDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/categories/filter/{codeCategory}": {
+      "get": {
+        "tags": ["category-controller"],
+        "operationId": "findByCode_2",
+        "parameters": [
+          {
+            "name": "codeCategory",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/CategoryDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/categories/allCategories": {
+      "get": {
+        "tags": ["category-controller"],
+        "operationId": "findAllCategories",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CategoryDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/articles/{idArticle}": {
+      "get": {
+        "tags": ["article-controller"],
+        "operationId": "findArticleById",
+        "parameters": [
+          {
+            "name": "idArticle",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ArticleDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/articles/{codeArticle}": {
+      "get": {
+        "tags": ["article-controller"],
+        "operationId": "findByCodeArticle",
+        "parameters": [
+          {
+            "name": "codeArticle",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ArticleDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/articles/historique/vente/{idArticle}": {
+      "get": {
+        "tags": ["article-controller"],
+        "operationId": "findHistorisqueVentes",
+        "parameters": [
+          {
+            "name": "idArticle",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LigneVenteDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/articles/historique/commandefournisseur/{idArticle}": {
+      "get": {
+        "tags": ["article-controller"],
+        "operationId": "findHistorisqueCommandeFournisseur",
+        "parameters": [
+          {
+            "name": "idArticle",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LigneCommandeFournisseurDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/articles/historique/commandeclient/{idArticle}": {
+      "get": {
+        "tags": ["article-controller"],
+        "operationId": "findHistorisqueCommandeClient",
+        "parameters": [
+          {
+            "name": "idArticle",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LigneCommandeClientDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/articles/filter/category/{idCategory}": {
+      "get": {
+        "tags": ["article-controller"],
+        "operationId": "findAllArticleByIdCategory",
+        "parameters": [
+          {
+            "name": "idCategory",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ArticleDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/articles/allArticle": {
+      "get": {
+        "tags": ["article-controller"],
+        "operationId": "findAll_1",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ArticleDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ventes/delete/{idVente}": {
+      "delete": {
+        "tags": ["ventes-controller"],
+        "operationId": "delete",
+        "parameters": [
+          {
+            "name": "idVente",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/utilisateurs/delete/{idUtilisateur}": {
+      "delete": {
+        "tags": ["utilisateur-controller"],
+        "operationId": "deleteUtilsateur",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/fournisseurs/delete/{idFournisseur})": {
+      "delete": {
+        "tags": ["fournisseur-controller"],
+        "operationId": "delete_1",
+        "parameters": [
+          {
+            "name": "idFournisseur",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/entreprises/delete/{idEntreprise}": {
+      "delete": {
+        "tags": ["entreprise-controller"],
+        "operationId": "delete_2",
+        "parameters": [
+          {
+            "name": "idEntreprise",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/commandesFournisseurs/delete/{idCommandeFournisseur}": {
+      "delete": {
+        "tags": ["commande-fournisseur-controller"],
+        "operationId": "delete_3",
+        "parameters": [
+          {
+            "name": "idCommandeFournisseur",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/commandesFournisseurs/delete/article/{idCommande}/{idLigneCommande}": {
+      "delete": {
+        "tags": ["commande-fournisseur-controller"],
+        "operationId": "deleteArticle",
+        "parameters": [
+          {
+            "name": "idCommande",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "idLigneCommande",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommandeFournisseurDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/commandesClients/update/article/{idCommande}/{idLigneCommande}": {
+      "delete": {
+        "tags": ["commande-client-controller"],
+        "operationId": "deleteArticle_1",
+        "parameters": [
+          {
+            "name": "idCommande",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "idLigneCommande",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommandeClientDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/commandesClients/delete/{idCommandeClient}": {
+      "delete": {
+        "tags": ["commande-client-controller"],
+        "operationId": "delete_4",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/clients/delete/{idClient}": {
+      "delete": {
+        "tags": ["client-controller"],
+        "operationId": "delete_5",
+        "parameters": [
+          {
+            "name": "idClient",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/categories/delete/{idCategory}": {
+      "delete": {
+        "tags": ["category-controller"],
+        "operationId": "delete_6",
+        "parameters": [
+          {
+            "name": "idCategory",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/articles/delete/{idArticle}": {
+      "delete": {
+        "tags": ["article-controller"],
+        "operationId": "delete_7",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ArticleDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "codeArticle": {
+            "type": "string"
+          },
+          "designation": {
+            "type": "string"
+          },
+          "prixUnitaireHt": {
+            "type": "number"
+          },
+          "tauxTva": {
+            "type": "number"
+          },
+          "prixUnitaireTtc": {
+            "type": "number"
+          },
+          "photo": {
+            "type": "string"
+          },
+          "category": {
+            "$ref": "#/components/schemas/CategoryDto"
+          },
+          "idEntreprise": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "CategoryDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "code": {
+            "type": "string"
+          },
+          "designation": {
+            "type": "string"
+          },
+          "idEntreprise": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "LigneVenteDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "vente": {
+            "$ref": "#/components/schemas/VentesDto"
+          },
+          "article": {
+            "$ref": "#/components/schemas/ArticleDto"
+          },
+          "quantite": {
+            "type": "number"
+          },
+          "prixUnitaire": {
+            "type": "number"
+          }
+        }
+      },
+      "VentesDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "code": {
+            "type": "string"
+          },
+          "dateVente": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "commantaire": {
+            "type": "string"
+          },
+          "ligneVente": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LigneVenteDto"
+            }
+          }
+        }
+      },
+      "ChangerMotDePasseUtilisateurDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "motDePasse": {
+            "type": "string"
+          },
+          "confirmMotDePasse": {
+            "type": "string"
+          }
+        }
+      },
+      "AdresseDto": {
+        "type": "object",
+        "properties": {
+          "adresse1": {
+            "type": "string"
+          },
+          "adresse2": {
+            "type": "string"
+          },
+          "ville": {
+            "type": "string"
+          },
+          "codePostale": {
+            "type": "string"
+          },
+          "pays": {
+            "type": "string"
+          }
+        }
+      },
+      "EntrepriseDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "nom": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "adresse": {
+            "$ref": "#/components/schemas/AdresseDto"
+          },
+          "photo": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "numTel": {
+            "type": "string"
+          },
+          "steWeb": {
+            "type": "string"
+          },
+          "codeFiscal": {
+            "type": "string"
+          }
+        }
+      },
+      "UtilisateurDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "nom": {
+            "type": "string"
+          },
+          "prenom": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "dateDeNaissance": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "moteDePasse": {
+            "type": "string"
+          },
+          "adresse": {
+            "$ref": "#/components/schemas/AdresseDto"
+          },
+          "photo": {
+            "type": "string"
+          },
+          "entreprise": {
+            "$ref": "#/components/schemas/EntrepriseDto"
+          },
+          "idRole": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "roleName": {
+            "type": "string"
+          }
+        }
+      },
+      "MvtStkDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "dateMvt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "quantite": {
+            "type": "number"
+          },
+          "article": {
+            "$ref": "#/components/schemas/ArticleDto"
+          },
+          "typeMvt": {
+            "type": "string",
+            "enum": ["ENTREE", "SORTIE", "CORRECTION_POS", "CORRECTION_NEG"]
+          },
+          "sourceMvt": {
+            "type": "string",
+            "enum": ["COMMANDE_CLIENT", "COMMANDE_FOURNISSEUR", "VENTE"]
+          },
+          "idEntreprise": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "CommandeFournisseurDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "code": {
+            "type": "string"
+          },
+          "dateCommande": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "etatCommande": {
+            "type": "string",
+            "enum": ["EN_PREPARATION", "VALIDEE", "LIVREE"]
+          },
+          "fournisseur": {
+            "$ref": "#/components/schemas/FournisseurDto"
+          },
+          "idEntreprise": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "commandeLivree": {
+            "type": "boolean"
+          }
+        }
+      },
+      "FournisseurDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "nom": {
+            "type": "string"
+          },
+          "prenom": {
+            "type": "string"
+          },
+          "adresse": {
+            "$ref": "#/components/schemas/AdresseDto"
+          },
+          "photo": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "numTel": {
+            "type": "string"
+          },
+          "commandeFournisseur": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CommandeFournisseurDto"
+            }
+          }
+        }
+      },
+      "ClientDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "nom": {
+            "type": "string"
+          },
+          "prenom": {
+            "type": "string"
+          },
+          "adresse": {
+            "$ref": "#/components/schemas/AdresseDto"
+          },
+          "photo": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "numTel": {
+            "type": "string"
+          }
+        }
+      },
+      "CommandeClientDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "code": {
+            "type": "string"
+          },
+          "dateCommande": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "etatCommande": {
+            "type": "string",
+            "enum": ["EN_PREPARATION", "VALIDEE", "LIVREE"]
+          },
+          "idEntreprise": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "client": {
+            "$ref": "#/components/schemas/ClientDto"
+          },
+          "commandeLivree": {
+            "type": "boolean"
+          }
+        }
+      },
+      "AuthenticationResponse": {
+        "type": "object",
+        "properties": {
+          "token": {
+            "type": "string"
+          }
+        }
+      },
+      "AuthenticationRequest": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        }
+      },
+      "LigneCommandeFournisseurDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "article": {
+            "$ref": "#/components/schemas/ArticleDto"
+          },
+          "commandeFournisseur": {
+            "$ref": "#/components/schemas/CommandeFournisseurDto"
+          },
+          "quantite": {
+            "type": "number"
+          },
+          "prixUnitaire": {
+            "type": "number"
+          },
+          "idEntreprise": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "LigneCommandeClientDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "article": {
+            "$ref": "#/components/schemas/ArticleDto"
+          },
+          "commandeClient": {
+            "$ref": "#/components/schemas/CommandeClientDto"
+          },
+          "quantite": {
+            "type": "number"
+          },
+          "prixUnitaire": {
+            "type": "number"
+          },
+          "idEntreprise": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "name": "bearerAuth",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  }
+}

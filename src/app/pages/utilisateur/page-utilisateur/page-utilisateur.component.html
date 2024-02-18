@@ -1,0 +1,24 @@
+<div class="col">
+    <div class="row m-1">
+        <div class="col-md-7 p-0">
+            <h1>Listes des utilisateurs</h1>
+        </div>
+        <div class="col-md-5 text-right">
+            <app-boutton-action (clickEvent1)="exporterUtilisateur()"
+                (clickEvent)="nouveauUtilisateur()"></app-boutton-action>
+        </div>
+    </div>
+    <div class="col m-0">
+        <app-detail-clt-frs></app-detail-clt-frs>
+        <app-detail-clt-frs></app-detail-clt-frs>
+        <app-detail-clt-frs></app-detail-clt-frs>
+        <app-detail-clt-frs></app-detail-clt-frs>
+        <app-detail-clt-frs></app-detail-clt-frs>
+
+    </div>
+    <div class="row">
+        <div class="col-md-12 mt-3 text-center">
+            <app-pagination></app-pagination>
+        </div>
+    </div>
+</div>

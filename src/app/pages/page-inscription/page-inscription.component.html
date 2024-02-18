@@ -1,0 +1,46 @@
+<div class="container my-container">
+    <div class="card  justify-content-center">
+        <div class="card-header text-center">
+            <h3>S'inscrire</h3>
+        </div>
+        <div class="card-body">
+            <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Nom" [(ngModel)]="entrepriseDto.nom">
+            </div>
+            <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Code fiscal"
+                    [(ngModel)]="entrepriseDto.codeFiscal">
+            </div>
+            <div class="mb-3">
+                <input type="email" class="form-control" placeholder="E-mail" [(ngModel)]="entrepriseDto.email">
+            </div>
+            <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Adresse 1" [(ngModel)]="adresseDto.adresse1">
+            </div>
+            <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Adresse 2" [(ngModel)]="adresseDto.adresse2">
+            </div>
+            <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Ville" [(ngModel)]="adresseDto.ville">
+            </div>
+            <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Code postal" [(ngModel)]="adresseDto.codePostale">
+            </div>
+            <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Pays" [(ngModel)]="adresseDto.pays">
+            </div>
+            <div class="mb-3">
+                <textarea type="text" class="form-control" placeholder="Déscription"
+                    [(ngModel)]="entrepriseDto.description"></textarea>
+            </div>
+            <div class="mb-3">
+                <input type="text" class="form-control" placeholder="N° Téléphone" [(ngModel)]="entrepriseDto.numTel">
+            </div>
+            <div class="mb-3 d-flex justify-content-between">
+                <a [routerLink]="['/login']" class="btn btn-link">Se connecter</a>
+                <button type="button" class="btn btn-primary" (click)="inscrire()">
+                    <i class="fa-solid fa-check"></i>&nbsp;S'inscrire</button>
+            </div>
+        </div>
+    </div>
+</div>
